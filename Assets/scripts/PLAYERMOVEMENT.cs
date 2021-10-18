@@ -189,11 +189,11 @@ public class PLAYERMOVEMENT : MonoBehaviour
 
             if (dir == Right)       // get the player direction
             {
-                Helper.MakeBullet(projectile, transform.position.x, transform.position.y + 1, 16, 1);
+                Helper.MakeBullet(projectile, transform.position.x + 5f, transform.position.y + 1, 16, 2);
             }
             else
             {
-                Helper.MakeBullet(projectile, transform.position.x + 1f, transform.position.y + 1, -16, 1);
+                Helper.MakeBullet(projectile, transform.position.x + 5f, transform.position.y + 1, -16, 2);
             }
         }
 
