@@ -45,7 +45,7 @@ public class PLAYERMOVEMENT : MonoBehaviour
 
     void DoCollisons()
     {
-        float rayLength = 0.2f;
+        float rayLength = 0.5f;
 
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, rayLength);
