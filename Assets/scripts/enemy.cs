@@ -81,39 +81,25 @@ public class enemy : MonoBehaviour
         rb.velocity = velocity;
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        isGrounded = true;
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        isGrounded = false;
-
          
-    void OnCollisionEnter2D(Collision2D collision)
-        {
-            if (collision.gameObject.name == "prefab")
-            {
-                TakeDamage(20);
-            }
-        }
+    void OnTriggerEnter2D( Collider2D other)
+    {
+        TakeDamage(20);
     }
-
     
-            void CreateProjectile()
-        {
+    void CreateProjectile()
+    {
 
 
 
-            int dir = Helper.GetObjectDir(gameObject);
+    int dir = Helper.GetObjectDir(gameObject);
 
 
-        if (dir == Right)       // get the player direction
+    if (dir == Right)       // get the player direction
         {
             Helper.MakeBullet(projectile, transform.position.x + 1f, transform.position.y + 1, 35, 4);
         }
-        else
+    else
         {
             Helper.MakeBullet(projectile, transform.position.x + 1f, transform.position.y + 1, -35, 4);
         }

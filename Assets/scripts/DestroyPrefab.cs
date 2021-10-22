@@ -7,12 +7,23 @@ public class DestroyPrefab : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(gameObject, 1.00f);
+        Destroy(gameObject, 0.4f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        void OnTriggerEnter2D( Collider2D other)
+        {
+            Destroy(gameObject , 0.4f);
+        }
+
+
+
+
+
+
+
+
     }
 }
