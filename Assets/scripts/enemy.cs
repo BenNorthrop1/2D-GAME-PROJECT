@@ -1,14 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Globals;
 
 public class enemy : MonoBehaviour
 {
     private Rigidbody2D rb;
+    public GameObject projectile;
 
     bool isGrounded;
 
     Animator m_Animator;
+
+    public int maxHealth = 100;
+    public int currentHealth;
+
+    public int currentAmmo;
+    public int maxAmmo = 100;
 
     public float speed = 10f;
     public float regular;
@@ -22,6 +30,8 @@ public class enemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         regular = speed;
         m_Animator = GetComponent<Animator>();
+        currentHealth = maxHealth;
+        currentAmmo = maxAmmo;
     }
 
     // Update is called once per frame
@@ -58,8 +68,7 @@ public class enemy : MonoBehaviour
         }
         else
         {
-            m_Animator.SetTrigger("IsAttacking");
-            m_Animator.SetBool("IsMoving", false);
+            DoFight();
         }
 
 
@@ -80,21 +89,52 @@ public class enemy : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         isGrounded = false;
+
+         
+    void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.name == "prefab")
+            {
+                TakeDamage(20);
+            }
+        }
     }
 
     
+            void CreateProjectile()
+        {
 
 
-    /* Helper.followPlayer();
-      if(player > 2)
-         {
 
-         }
+            int dir = Helper.GetObjectDir(gameObject);
 
-     if(player > -2)
-         {
 
-         }*/
+        if (dir == Right)       // get the player direction
+        {
+            Helper.MakeBullet(projectile, transform.position.x + 1f, transform.position.y + 1, 35, 4);
+        }
+        else
+        {
+            Helper.MakeBullet(projectile, transform.position.x + 1f, transform.position.y + 1, -35, 4);
+        }
+    }
+
+
+    void DoFight()
+    {
+        m_Animator.SetTrigger("Fight");
+    }
+
+    void TakeDamage(int damage )
+        {
+            currentHealth -= damage;
+
+            if (currentHealth == 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+
 
 
 

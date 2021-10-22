@@ -181,7 +181,7 @@ public class PLAYERMOVEMENT : MonoBehaviour
 
 
 
-        void CreateRock()
+        void CreateProjectile()
         {
 
             int dir = Helper.GetObjectDir(gameObject);
@@ -189,11 +189,11 @@ public class PLAYERMOVEMENT : MonoBehaviour
 
         if (dir == Right)       // get the player direction
         {
-            Helper.MakeBullet(projectile, transform.position.x + 1f, transform.position.y + 1, 50, 4);
+            Helper.MakeBullet(projectile, transform.position.x + 1f, transform.position.y + 1, 35, 4);
         }
         else
         {
-            Helper.MakeBullet(projectile, transform.position.x + 1f, transform.position.y + 1, -50, 4);
+            Helper.MakeBullet(projectile, transform.position.x + 1f, transform.position.y + 1, -35, 4);
         }
 
         }

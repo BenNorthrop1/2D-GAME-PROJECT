@@ -35,3 +35,6 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+Assets/Prefabs/Arrow.prefab
+Assets/Prefabs/Arrow.prefab
+Logs/shadercompiler-AssetImportWorker0.log
