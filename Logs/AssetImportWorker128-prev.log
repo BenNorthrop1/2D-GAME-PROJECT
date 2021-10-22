@@ -1,0 +1,44 @@
+Using pre-set license
+Built from '2021.1/staging' branch; Version is '2021.1.18f1 (25bdc3efbc2d) revision 2473411'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Education; OS build 19042.631; Version 2009; 64bit' Language: 'en' Physical Memory: 8024 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.1.18f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker128
+-projectPath
+H:/Documents/GitHub/2D-GAME-PROJECT
+-logFile
+Logs/AssetImportWorker128.log
+-srvPort
+61989
+Successfully changed project path to: H:/Documents/GitHub/2D-GAME-PROJECT
+H:/Documents/GitHub/2D-GAME-PROJECT
+Using Asset Import Pipeline V2.
+Assertion failed on expression: 'm_ErrorCode == MDB_MAP_RESIZED || !HasAbortingErrors()'
+received signal from system: SIGSEGV
+Stack trace:
+0x00007ff7b6d379ac (Unity) StackWalker::GetCurrentCallstack
+0x00007ff7b6d3da59 (Unity) StackWalker::ShowCallstack
+0x00007ff7b7535963 (Unity) GetStacktrace
+0x00007ff7b6d37090 (Unity) winutils::CrashHandler::DefaultSignalHandler
+0x00007ff7b90fbc1e (Unity) seh_filter_exe
+0x00007ff7b91c4a6d (Unity) `__scrt_common_main_seh'::`1'::filt$0
+0x00007ff7b90c8af8 (Unity) _C_specific_handler
+0x00007fffd3f710ff (ntdll) _chkstk
+0x00007fffd3f1b474 (ntdll) RtlRaiseException
+0x00007fffd3f6fc2e (ntdll) KiUserExceptionDispatcher
+0x00007ff7b76606cb (Unity) SourceAssetDBReadTxn::SourceAssetDBReadTxn
+0x00007ff7b762e966 (Unity) SyncAssetFoldersWithDB
+0x00007ff7b761db6d (Unity) InitializeAssetDatabaseV2
+0x00007ff7b75bb895 (Unity) AssetDatabase::InitializeAssetDatabase
+0x00007ff7b712c190 (Unity) Application::InitializeProject
+0x00007ff7b753f007 (Unity) WinMain
+0x00007ff7b90a6332 (Unity) __scrt_common_main_seh
+0x00007fffd37d7034 (KERNEL32) BaseThreadInitThunk
+0x00007fffd3f1cec1 (ntdll) RtlUserThreadStart
+

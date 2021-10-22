@@ -45,7 +45,7 @@ public class PLAYERMOVEMENT : MonoBehaviour
 
     void DoCollisons()
     {
-        float rayLength = 0.2f;
+        float rayLength = 0.5f;
 
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, rayLength);
@@ -187,14 +187,15 @@ public class PLAYERMOVEMENT : MonoBehaviour
             int dir = Helper.GetObjectDir(gameObject);
 
 
-            if (dir == Right)       // get the player direction
-            {
-                Helper.MakeBullet(projectile, transform.position.x, transform.position.y + 1, 16, 1);
-            }
-            else
-            {
-                Helper.MakeBullet(projectile, transform.position.x + 1f, transform.position.y + 1, -16, 1);
-            }
+        if (dir == Right)       // get the player direction
+        {
+            Helper.MakeBullet(projectile, transform.position.x + 1f, transform.position.y + 1, 50, 4);
+        }
+        else
+        {
+            Helper.MakeBullet(projectile, transform.position.x + 1f, transform.position.y + 1, -50, 4);
+        }
+
         }
 
 
